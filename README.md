@@ -16,6 +16,7 @@ The default page style features a header and a highlight bar.
 
 For consecutive pages, a layout with the highlight bar but without the header might be needed.
 Depending on the options for my-resume, the highlight bar can alternate between pages (option doublesided) or stay on the left side for all pages (option singlesided).
+In this case, the highlight bar is left empty and appears as a grey block.
 
 ![Example PDF page 2](https://github.com/GiantMolecularCloud/my-resume/blob/main/resume-2.png "Example PDF page 2")
 
