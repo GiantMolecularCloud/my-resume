@@ -1,0 +1,222 @@
+\documentclass[%singlesided,
+               doublesided,
+               paper=a4,
+               fontsize=10pt
+              ]{my-resume}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% set geometry
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setlength\highlightwidth{8cm}
+\setlength\headerheight{4cm}            % note that margintop gets added to this value, i.e. the header bar is 5cm
+\setlength\marginleft{1cm}
+\setlength\marginright{\marginleft}      % needs to be 1.5 times to be actually equal. why?
+\setlength\margintop{1cm}
+\setlength\marginbottom{1cm}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% FONTS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\RequirePackage{fontspec}
+\setmainfont{Carlito}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% COLORS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\colorlet{highlightbarcolor}{lightgray}
+\colorlet{headerbarcolor}{darkgray}
+
+\colorlet{headerfontcolor}{white}
+\colorlet{accent}{awesome-red}
+\colorlet{heading}{black}
+\colorlet{emphasis}{black}
+\colorlet{body}{black}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% set document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+\name{Dr. Nico Krieger}
+\tagline{Amazing tag line that makes HR managers want to hire you immediately.\\The tag line is aligned with the bottom of the picture to the right, so if you have\\multiple lines it fills the space to your name from the bottom. You might want to\\introduce manual line breaks to make this look nicer then simply filling up the lines.}
+\photo[round]{picture.jpg}{\dimexpr \headerheight-\marginbottom}   % make photo exactly match the header with margintop/marginright/marginbottom as margin
+
+\makeheader
+
+\highlightbar{
+
+    \section{Contact}
+    
+    \email{mail@mailprovider.com}
+    \phone{+49 123 456789}
+    \location{Some Street 1, 12345 City Name}
+    \vspace{0.5em}
+    \homepage{nicokrieger.com}{https://www.nicokrieger.de}
+    \github{@GiantMolecularCloud}{https://github.com/giantmolecularcloud}
+    \linkedin{Nico Krieger}{https://www.linkedin.com/in/nico-krieger-6b28151b2/}
+    \orcid{0000-0003-1104-2014}{https://www.orcid.org/0000-0003-1104-2014}
+    \ads{NASA/ADS publication list}{https://ui.adsabs.harvard.edu/search/fq=\%7B!type\%3Daqp\%20v\%3D\%24fq\_database\%7D&fq\_database=database\%3A\%20astronomy&p\_=0&q=pubdate\%3A\%5B2016-01\%20TO\%209999-12\%5D\%20author\%3A(\%22Krieger\%2C\%20Nico\%22)&sort=date\%20desc\%2C\%20bibcode\%20desc}
+    
+    \section{Skills}
+    
+    \skillsection{Programming}
+    \skill{Python}{5}
+    \skill{Bash}{4}
+    \skill{C++}{2}
+    \skill{Apple Script}{3}
+    \skill{HTML/CSS}{3}
+    \skill{LaTeX}{4}
+    
+    \vspace{0.5em}
+    \skillsection{Operating Systems}
+    \skill{Linux}{4}
+    \skill{MacOS}{5}
+    \skill{Windows}{3}
+    
+    \vspace{0.5em}
+    \skillsection{Software \& Tools}
+    \skill{Visualisation}{5}
+    (e.g. matplotlib, gnuplot, ...)\\
+    \skill{Data handling/analysis}{5}
+    (e.g. numpy, scipy, pandas, ...)\\
+    \skill{Docker}{3}
+    \skill{Office}{4}
+    
+    \vspace{0.5em}
+    \skillsection{Another skill subsection header}
+    You can also put simply text here without the dots.
+    
+    \vspace{0.5em}
+    \skillsection{Languages}
+    \skill{German}{5}
+    \skill{English}{5}
+    \skill{French}{2}
+    \bigskip
+    
+    \section{Certificates}
+    \simpleskill{AWS certified cloud practitioner}
+
+}
+\mainbar{
+    \section{About this template}
+    Section are set in bold face. An optional parameter of \texttt{\textbackslash section} takes a symbol to add in front of the text. This option is used in the jobs and education sections below.
+    
+    \section[\faGears]{Work history}
+    \job{date}
+        {Employer name and city}
+        {Position Title}
+        {Additional details for this position. Can be left empty to omit this line}
+    \job{01/2020 - 12/2020}
+        {An employer with a long name,\\City in new line}
+        {Previous position}
+        {}
+    
+    \section[\faMortarBoard]{Education}
+    \job{01/2019 - 12/2019}
+        {University, City}
+        {Bachelor of Something}
+        {}
+
+    \section{Achievements, honours and awards}
+    \achievement{My first achievement}
+    \achievement{My second achievement}
+
+    \section{General Skills}
+    \smallskip % additional skip because tag outlines use up space
+    \tag{Tag 1}
+    \tag{Tag 2}
+    \tag{and}
+    \tag{another tag}
+    \tag{some more tags}
+    \tag{yet another one}
+    \tag{tags flow over}
+    \tag{to the next line}
+    \tag{if necessary}
+    
+    \medskip
+    Tags must be ordered by hand with newlines to get a nice layout, especially for long tags.
+    
+    \section{Wheel Chart}
+    % This is taken from AltaCV
+    % see https://github.com/liantze/AltaCV for details
+    \wheelchart{1.5cm}{0.5cm}{% outer and inner diameter
+        6/8em/accent!20/Sleep,          % comma-separated list of
+        8/8em/accent!40/Daytime job,    % fraction of 24 / line length / color / label
+        2/8em/accent!80/Training,          % here, the color is shades of the accent color
+        3/8em/accent!60/Recovering from fighting criminals,
+        5/8em/accent/Being Batman
+    }
+}
+\makebody
+\clearpage
+
+
+\pagestyle{highlightmain}
+\highlightbar{}
+\mainbar{
+
+    \section{Another section}
+    
+    This page uses the page style \texttt{highlightmain} which shows the highlight bar (gray) and the main part (white background) but omits the header. 
+    The default page style is \texttt{headerhighlightmain} with all three elements.
+    If you don't want header, nor highlight bar, use page style \texttt{\textbackslash pagestyle\{empty\}}.
+    \medskip
+    Neither main, nor highlight bar must be filled to make this template work.
+    It is possible to use a page style with the highlight bar but leave it empty by setting an empty highlightbar \texttt{\textbackslash highlightbar\{\}}.
+
+    \vspace{0.5em}
+    \subsection{Subsection 1}
+    Demonstrate subsections.
+    
+    \subsection{Subsection 2}
+    Subsection are also bold face but a smaller font then section. They also omit the rule.
+    
+
+}
+\makebody
+
+
+\clearpage
+\pagestyle{empty}
+
+\section{Publications}
+\pubforcefullwidth
+
+Demonstrate what an \texttt{\textbackslash pagestyle\{empty\}} page looks like.
+Also show off the macros for publications that uses small icons for authors, date, journal and links.
+
+Achieving a good looking spacing can be tricky. For empty pagestyles where the full width is available use \texttt{\textbackslash pubforcefullwidth} to force the publoication list to take up all the available space.
+The (relative) lengths reserved for date, journal and links can be set with the parameters \texttt{\textbackslash pubdatelength}, \texttt{\textbackslash pubjournallength} and \texttt{\textbackslash publinklength} as in \texttt{\textbackslash setlength\{\textbackslash pubdatelength\}\{0.15 \textbackslash linewidth\}}.
+\bigskip
+
+\publication
+	{The turbulent gas structure in the centers of NGC~253 and the Milky Way} % Title
+	{\textbf{N. Krieger}, A. Bolatto, E. Koch, A. Leroy, E. Rosolowsky, F. Walter, A. Wei\ss, D. Eden, R. Levy, D. Meier, E. Mills, T. Moore, J. Ott, Y. Su, S. Veilleux} % Authors
+	{2020} % Year
+	{The Astrophysical Journal Vol. 899, Issue 2, id.158} % Journal
+	{\ADS{https://ui.adsabs.harvard.edu/abs/2020ApJ...899..158K}, \arXiv{https://arxiv.org/abs/2008.02518}} % ADS & arxiv links
+
+\publication
+	{The molecular ISM in the Super Star Clusters of the starburst NGC253} % Title
+	{\textbf{N. Krieger}, A. Bolatto, A. Leroy, R. Levy, E. Mills, D. Meier, S. Veilleux, F. Walter, A. Wei\ss} % Authors
+	{2020} % Year
+	{The Astrophysical Journal Vol.897, Issue 2, id.176} % Journal
+	{\ADS{https://ui.adsabs.harvard.edu/abs/2020ApJ...897..176K}, \arXiv{https://arxiv.org/abs/2006.08262}} % ADS & arxiv links
+
+\publication
+	{The Molecular Outflow in NGC\,253 at a Resolution of Two Parsecs} % Title
+	{\textbf{N. Krieger}, A. Bolatto, F. Walter, A. Leroy, L. Zschaechner, D. Meier, J. Ott, A. Wei\ss, E. Mills, S. Veilleux, M. Gorski} % Authors
+	{2019} % Year
+	{The Astrophysical Journal Vol.881, Issue 1, article id. 43, 20 pp} % Journal
+	{\ADS{https://ui.adsabs.harvard.edu/abs/2019ApJ...881...43K}, \arXiv{https://arxiv.org/abs/1907.00731}} % ADS & arxiv links
+
+\end{document}
