@@ -4,7 +4,8 @@ It borrows a few lines of code from ![AltaCV](https://github.com/liantze/AltaCV)
 
 Note that my-resume runs on XeLaTeX.
 
-An Overleaf template can be found here: [publication being processed by Overleaf]
+An Overleaf template can be found here: ![overleaf template](https://www.overleaf.com/latex/templates/my-resume/qxsxdtmknkfr)  
+(Note that this template may not be the most up-to-date version. Try the latest version from GitHub first if you encounter problems.)
 
 # Example PDF
 
