@@ -9,7 +9,7 @@ An Overleaf template can be found here: ![overleaf template](https://www.overlea
 
 # Example PDF
 
-Thre three pages below show most possibilities that are implemented in my-resume. There are different pagestyles available, colors, header and much more can be optimized to match your taste.
+The three pages below show most possibilities that are implemented in my-resume. There are different pagestyles available, colors, header and much more can be optimized to match your taste.
 
 The default page style features a header and a highlight bar.
 
