@@ -336,7 +336,7 @@
             \hspace{\dimexpr \marginleft+\marginright}%
             \@mainbar
         }{% if double layout, the highlight bar alternates
-            \Ifthispageodd{% if the page is odd, the highlight bar is on the left (as is for single layout)
+            \ifthispageodd{% if the page is odd, the highlight bar is on the left (as is for single layout)
                 \@highlightbar
                 \hspace{\dimexpr \marginleft+\marginright}%
                 \@mainbar
