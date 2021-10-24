@@ -161,7 +161,10 @@
 
 
 \pagestyle{highlightmain}
-\highlightbar{}
+
+% The highlightbar needs to be filled to display mainbar contents correctly in singlesised mode
+% For an empty highlightbar, fill with empty space
+\highlightbar{\hfill}
 \mainbar{
 
     \section{Another section}
