@@ -1,0 +1,17 @@
+name: Build LaTeX document
+on: [push]
+jobs:
+  build_latex:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v1
+      - name: Compile LaTeX document
+        uses: xu-cheng/latex-action@master
+        with:
+          root_file: resume.tex
+          args: -xelatex
+      - uses: actions/upload-artifact@master
+        with:
+          name: resume.pdf
+          path: resume.pdf
