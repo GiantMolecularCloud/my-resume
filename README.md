@@ -2,7 +2,8 @@
 Another LaTeX template for a resume/CV. This one was inspired by ![AltaCV](https://github.com/liantze/AltaCV) and various others but does exactly what I needed.
 It borrows a few lines of code from ![AltaCV](https://github.com/liantze/AltaCV) and ![AwesomeCV](https://github.com/posquit0/Awesome-CV).
 
-Note that my-resume runs on XeLaTeX.
+Note that my-resume runs on XeLaTeX!  
+Depending on your build environment you might have to switch to using XeLaTeX instead of e.g. pdfTeX or pdfLaTeX. For VS Code, see ![#11](https://github.com/GiantMolecularCloud/my-resume/issues/11).
 
 An Overleaf template can be found here: ![overleaf template](https://www.overleaf.com/latex/templates/my-resume/qxsxdtmknkfr)  
 (Note that this template may not be the most up-to-date version. Try the latest version from GitHub first if you encounter problems.)
