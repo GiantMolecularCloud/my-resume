@@ -254,30 +254,34 @@
         \vspace{\dimexpr \@namefontheight-\@namelineheight}                     % align top of name and photo
         % create two minipages for header text and photo if photo is given
         \ifdef{\@photodiameter}{
-            \begin{minipage}[t]{\dimexpr \textwidth-\@photodiameter}        % to top align name and photo add [t] here
-                \vspace{0cm}%
-            }{}
+                \begin{minipage}[t]{\dimexpr \textwidth-\@photodiameter}        % to top align name and photo add [t] here
+                    \vspace{0cm}%
+            }{
+                \begin{minipage}[t]{\textwidth}    
+            }
             % print the header text
-                \begin{minipage}[t][2em]{\linewidth}
-                    {\Huge\bfseries\color{headerfontcolor}\MakeUppercase{\@name}\par}
-                \end{minipage}%
-                \vfill%
-                \begin{minipage}[b][\dimexpr \headerheight-2em-\marginbottom]{\linewidth}%
-                    {\large\bfseries\color{headerfontcolor}\@tagline\par}
-                \end{minipage}%
+            \begin{minipage}[t][2em]{\linewidth}
+                {\Huge\bfseries\color{headerfontcolor}\MakeUppercase{\@name}\par}
+            \end{minipage}%
+            \vfill%
+            \begin{minipage}[b][\dimexpr \headerheight-2em-\marginbottom]{\linewidth}%
+                {\large\bfseries\color{headerfontcolor}\@tagline\par}
+            \end{minipage}%
         % finish the minipages for text and photo if photo is given
         \ifdef{\@photodiameter}{%
-            \end{minipage}\hfil%
-            \begin{minipage}[t]{\@photodiameter}                                % to top align name and photo add [t] here
-                \vspace{0cm}
-    			% format as square or round
-    			\ifthenelse{\equal{\@photoformat}{square}}{%
-    			    \includegraphics[width=\linewidth]{\@photo}%
-    			}{%
-    			    \tikz\path[fill overzoom image={\@photo}]circle[radius=0.5\linewidth];
-    			}
-    		\end{minipage}%
-            }{}
+                \end{minipage}\hfil%
+                \begin{minipage}[t]{\@photodiameter}                                % to top align name and photo add [t] here
+                    \vspace{0cm}
+        			% format as square or round
+        			\ifthenelse{\equal{\@photoformat}{square}}{%
+        			    \includegraphics[width=\linewidth]{\@photo}%
+        			}{%
+        			    \tikz\path[fill overzoom image={\@photo}]circle[radius=0.5\linewidth];
+        			}
+        		\end{minipage}%
+            }{
+                \end{minipage}
+            }
 	\end{minipage}%
 }
 
@@ -300,6 +304,7 @@
 \newcommand{\phone}[1]{\infofield{\faPhone}{#1}}
 \newcommand{\homepage}[2]{\infofield{\faHome}{\href{#2}{#1}}}
 \newcommand{\linkedin}[2]{\infofield{\faLinkedin}{\href{#2}{#1}}}
+\newcommand{\twitter}[2]{\infofield{\faTwitter}{\href{#2}{#1}}}
 \newcommand{\github}[2]{\infofield{\faGithub}{\href{#2}{#1}}}
 \newcommand{\orcid}[2]{\infofield{\aiOrcid}{\href{#2}{#1}}}
 \newcommand{\ads}[2]{\infofield{\aiADS}{\href{#2}{#1}}}
