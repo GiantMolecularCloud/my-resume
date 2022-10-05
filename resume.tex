@@ -10,11 +10,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \setlength\highlightwidth{8cm}
-\setlength\headerheight{4cm}            % note that margintop gets added to this value, i.e. the header bar is 5cm
+\setlength\headerheight{4cm}  % note that margintop gets added to this value, i.e. the header bar is 5cm
 \setlength\marginleft{1cm}
-\setlength\marginright{\marginleft}      % needs to be 1.5 times to be actually equal. why?
-\setlength\margintop{1cm}
-\setlength\marginbottom{1cm}
+\setlength\marginright{\marginleft}
+\setlength\margintop{\marginleft}
+\setlength\marginbottom{\margintop}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -48,7 +48,13 @@
 
 \name{Dr. Nico Krieger}
 \tagline{Amazing tag line that makes HR managers want to hire you immediately.\\The tag line is aligned with the bottom of the picture to the right, so if you have\\multiple lines it fills the space to your name from the bottom. You might want to\\introduce manual line breaks to make this look nicer then simply filling up the lines.}
-\photo[round]{picture.jpg}{\dimexpr \headerheight-\marginbottom}   % make photo exactly match the header with margintop/marginright/marginbottom as margin
+
+% make photo exactly match the header with margintop/marginright/marginbottom as margin
+% \photo[round]{picture.jpg}{\dimexpr \headerheight-\marginbottom}
+
+% with option noborder, the image size is set by the header height and not the image size parameter!
+% instead, this parameter is misused to fine-tune the alignment, e.g. shift the photo up by 0.4mm
+\photo[noborder]{picture.jpg}{0.4mm}
 
 \makeheader
 

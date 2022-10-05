@@ -250,38 +250,61 @@
 % assemble the header
 \newcommand{\makeheader}{% header bar is a minipage
     \begin{minipage}[t][\headerheight]{\textwidth}%
-        % \vspace{-1em}
-        \vspace{\dimexpr \@namefontheight-\@namelineheight}                     % align top of name and photo
+        \vspace{\dimexpr \@namefontheight-\@namelineheight}
         % create two minipages for header text and photo if photo is given
         \ifdef{\@photodiameter}{
-                \begin{minipage}[t]{\dimexpr \textwidth-\@photodiameter}        % to top align name and photo add [t] here
-                    \vspace{0cm}%
-            }{
-                \begin{minipage}[t]{\textwidth}    
+            \ifthenelse{\equal{\@photoformat}{noborder}}{%
+                \begin{minipage}[t]{\dimexpr \textwidth-\headerheight-\marginright}
+            }{%
+                \begin{minipage}[t]{\dimexpr \textwidth-\@photodiameter}
             }
-            % print the header text
-            \begin{minipage}[t][2em]{\linewidth}
-                {\Huge\bfseries\color{headerfontcolor}\MakeUppercase{\@name}\par}
-            \end{minipage}%
-            \vfill%
-            \begin{minipage}[b][\dimexpr \headerheight-2em-\marginbottom]{\linewidth}%
-                {\large\bfseries\color{headerfontcolor}\@tagline\par}
-            \end{minipage}%
+            \vspace{0cm}%
+        }{
+            \begin{minipage}[t]{\textwidth}    
+        }
+        % print the header text
+        \begin{minipage}[t][2em]{\linewidth}
+            {\Huge\bfseries\color{headerfontcolor}\MakeUppercase{\@name}\par}
+        \end{minipage}%
+        \vfill%
+        \begin{minipage}[b][\dimexpr \headerheight-2em-\marginbottom]{\linewidth}%
+            {\large\bfseries\color{headerfontcolor}\@tagline\par}
+        \end{minipage}%
         % finish the minipages for text and photo if photo is given
         \ifdef{\@photodiameter}{%
-                \end{minipage}\hfil%
-                \begin{minipage}[t]{\@photodiameter}                                % to top align name and photo add [t] here
-                    \vspace{0cm}
-        			% format as square or round
-        			\ifthenelse{\equal{\@photoformat}{square}}{%
-        			    \includegraphics[width=\linewidth]{\@photo}%
-        			}{%
-        			    \tikz\path[fill overzoom image={\@photo}]circle[radius=0.5\linewidth];
-        			}
-        		\end{minipage}%
-            }{
-                \end{minipage}
-            }
+            \end{minipage}\hfill%
+            \ifthenelse{\equal{\@photoformat}{noborder}}{%
+                \begin{minipage}[t]{\headerheight}
+                \vspace{\dimexpr -\margintop-\@photodiameter}
+                \includegraphics[height=\dimexpr \headerheight+\margintop]{\@photo}%
+            }{%
+                \begin{minipage}[t]{\@photodiameter}
+                \vspace{0cm}
+        		\ifthenelse{\equal{\@photoformat}{square}}{%
+    			    \includegraphics[width=\linewidth]{\@photo}%
+    			}{%
+                    \tikz\path[fill overzoom image={\@photo}]circle[radius=0.5\linewidth];
+        		}
+        	}
+        	\end{minipage}%
+        %         \begin{minipage}[t]{\@photodiameter}
+        %             \vspace{0cm}
+        % 			% format as square, square without borders or round
+        % 			\ifthenelse{\equal{\@photoformat}{square}}{%
+        % 			    \includegraphics[width=\linewidth]{\@photo}%
+        % 			}{%
+        % 			    \ifthenelse{\equal{\@photoformat}{noborder}}{%
+        % 			     %   \includegraphics[width=\dimexpr \linewidth+\margintop]{\@photo}%
+        % 			        \vspace{-\margintop}
+        % 			        \includegraphics[height=\dimexpr \@photodiameter+\margintop+\marginbottom]{\@photo}%
+        %     			}{%
+        %     			    \tikz\path[fill overzoom image={\@photo}]circle[radius=0.5\linewidth];
+        %     			}
+        % 			}
+        % 		\end{minipage}%
+        }{
+            \end{minipage}
+        }
 	\end{minipage}%
 }
 
