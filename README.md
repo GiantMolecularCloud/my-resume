@@ -1,3 +1,5 @@
+[![Build LaTeX document](https://github.com/GiantMolecularCloud/my-resume/actions/workflows/main.yml/badge.svg)](https://github.com/GiantMolecularCloud/my-resume/actions/workflows/main.yml)
+
 # my-resume
 Another LaTeX template for a resume/CV. This one was inspired by ![AltaCV](https://github.com/liantze/AltaCV) and various others but does exactly what I needed.
 It borrows a few lines of code from ![AltaCV](https://github.com/liantze/AltaCV) and ![AwesomeCV](https://github.com/posquit0/Awesome-CV).
