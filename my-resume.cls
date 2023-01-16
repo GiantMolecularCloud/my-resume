@@ -297,7 +297,18 @@
 % contact info
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\infofield}[2]{\mbox{\makebox[5mm]{\textcolor{accent}{\normalsize #1}}\hspace{0.5em}#2}\vspace{0.2em}\newline}
+\newcommand{\infofield}[2]{%
+        \begin{minipage}[t]{\linewidth}%
+            \begin{minipage}[t]{5mm}% wrap marker in minipage to allow multi-line contact info
+                \makebox[5mm][c]{\textcolor{accent}{\normalsize #1}}
+            \end{minipage}%
+            \hspace{0.5em}%
+            \begin{minipage}[t]{\dimexpr \linewidth-5mm-0.5em}% wrap info in minipage to allow multi-line info
+                #2
+            \end{minipage}%
+        \end{minipage}%
+        \vspace{0.2em}\newline
+}
 \newcommand{\email}[1]{\infofield{\faEnvelope}{\href{mailto:#1}{#1}}}
 \newcommand{\address}[1]{\infofield{\faAt}{#1}}
 \newcommand{\location}[1]{\infofield{\faMapMarker}{#1}}
